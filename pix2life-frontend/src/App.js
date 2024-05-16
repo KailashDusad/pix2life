@@ -1,19 +1,19 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import Home from './components/Home';
-import About from './components/About';
-import Contact from './components/Contact';
-import NotFound from './components/NotFound';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Register from './components/Register';
+import CreateProject from './components/CreateProject';
+import Scan from './components/Scan';
 
 function App() {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="*" element={<Navigate to="/" />} />
-      </Routes>
+      <div className="App">
+        <Routes>
+          <Route path="/register" element={<Register />} />
+          <Route path="/create" element={<CreateProject />} />
+          <Route path="/scan" element={<Scan />} />
+        </Routes>
+      </div>
     </Router>
   );
 }
