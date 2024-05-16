@@ -2,9 +2,21 @@ const express = require('express');
 const mongoose = require('mongoose');
 const multer = require('multer');
 const app = express();
+const path = require('path')
+const fs = require('fs');
+
+const filePath = 'D:\\PIX2Life\\uploads\\scanImage-1715864139134';
+
+fs.access(filePath, fs.constants.F_OK, (err) => {
+    if (err) {
+        console.error(`File ${filePath} does not exist`);
+    } else {
+        console.log(`File ${filePath} exists`);
+    }
+});
 
 mongoose.connect('mongodb://localhost/pix2life', { useNewUrlParser: true, useUnifiedTopology: true });
-
+app.use(express.static(path.join(__dirname, 'pix2life-frontend/build')));
 const projectSchema = new mongoose.Schema({
     name: String,
     scanImage: String,
@@ -31,7 +43,9 @@ const storage = multer.diskStorage({
     }
 });
 const upload = multer({ storage: storage });
-
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname+'/pix2life-frontend/build/index.html'));
+  });
 app.post('/api/register', (req, res) => {
     // Registration logic
 });
