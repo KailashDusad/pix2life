@@ -1,0 +1,21 @@
+extends layout
+
+block content
+    h1 Create a New Project
+    form(action='/create', method='POST')
+        label(for='name') Project Name:
+        input(type='text', name='name', required)
+        label(for='type') Project Type:
+        select(name='type', required)
+            option(value='Image Gallery') Image Gallery
+            option(value='Video') Video
+            option(value='Audio') Audio
+        label(for='videoUrl') Video URL (if applicable):
+        input(type='url', name='videoUrl')
+        label(for='audioFile') Audio File URL (if applicable):
+        input(type='url', name='audioFile')
+        label(for='intro') Intro:
+        textarea(name='intro')
+        label(for='credits') Credits:
+        textarea(name='credits')
+        button(type='submit') Save Project

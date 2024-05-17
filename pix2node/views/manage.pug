@@ -1,0 +1,9 @@
+extends layout
+
+block content
+    h1 Manage Projects
+    each project in projects
+        div
+            h2= project.name
+            p= project.type
+            a(href=project.url) View Project
