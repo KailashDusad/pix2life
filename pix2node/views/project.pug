@@ -2,7 +2,7 @@ extends layout
 
 block content
     h1 Create a New Project
-    form(action='/create', method='POST')
+    form(action='/create', method='POST', enctype='multipart/form-data')
         label(for='name') Project Name:
         input(type='text', name='name', required)
         label(for='type') Project Type:
@@ -10,6 +10,8 @@ block content
             option(value='Image Gallery') Image Gallery
             option(value='Video') Video
             option(value='Audio') Audio
+        label(for='scannableImage') Scannable Image:
+        input(type='file', name='scannableImage')
         label(for='videoUrl') Video URL (if applicable):
         input(type='url', name='videoUrl')
         label(for='audioFile') Audio File URL (if applicable):
