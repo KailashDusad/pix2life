@@ -10,10 +10,10 @@ const CreateAccount = () => {
         <Col xs={12} md={6}>
           <Nav variant="tabs" defaultActiveKey="/" className="justify-content-center">
             <Nav.Item>
-              <Nav.Link as={Link} to="/" className="active">Create Account</Nav.Link>
+              <Nav.Link as={Link} to="/sign" className="active">Create Account</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link as={Link} to="/login">Log In</Nav.Link>
+              <Nav.Link as={Link} to="/">Log In</Nav.Link>
             </Nav.Item>
           </Nav>
           <div className="form-container">
