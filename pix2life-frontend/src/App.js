@@ -10,6 +10,7 @@ import SelectType from './components/SelectType';
 import NewImageGallery from './components/NewImageGallery';
 import './App.css';
 // import { GoogleLogin } from '@react-oauth/google';
+// import Scan from './components/Scan';
 
 const App = () => {
 //   const responseMessage = (response) => {
@@ -27,6 +28,7 @@ const App = () => {
         <Route path="/create-project" element={<CreateProject />} />
         <Route path="/select-type" element={<SelectType />} />
         <Route path="/new-image-gallery" element={<NewImageGallery />} />
+        {/* <Route path="/scan" element={<Scan />} /> */}
       </Routes>
     </Router>
   );
